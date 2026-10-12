@@ -1,165 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> GUJRATI TRADER - Learning Community</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080d12">
 
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+  <title>GAUTAM KUMAR | Stock Market Education</title>
+  <meta name="description" content="Explore stock market concepts, terminology and educational resources with the GAUTAM KUMAR learning community.">
 
-  .card {
-    width: 85%;
-    max-width: 340px; 
-    background: #010a0f;
-    border: 1.5px solid #00d2ff;
-    border-radius: 35px;
-    padding: 20px 15px;
-    text-align: center;
-    box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
-  }
+  <link rel="preconnect" href="https://iili.io">
 
-  .profile-img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    border: 3px solid #00d2ff;
-    object-fit: cover;
-    margin-top: -5px;
-    box-shadow: 0 0 15px #00d2ff;
-  }
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080d12;
+      --card: #101922;
+      --border: #23313c;
+      --text: #f3f6f8;
+      --muted: #a6b3bd;
+      --green: #42d6a0;
+      --green-dark: #09291f;
+    }
 
-  h1 {
-    color: #fff;
-    font-size: 20px;
-    margin: 15px 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+    * { box-sizing: border-box; }
 
-  .features {
-    text-align: left;
-    margin: 0 auto;
-    width: 90%;
-  }
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
 
-  .feature-item {
-    color: #ccc;
-    font-size: 13px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    align-items: center;
-  }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding:
+        max(16px, env(safe-area-inset-top))
+        max(14px, env(safe-area-inset-right))
+        max(20px, env(safe-area-inset-bottom))
+        max(14px, env(safe-area-inset-left));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 50% 0%, #142b2a 0%, transparent 55%),
+        var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
 
-  .feature-item:last-child { border-bottom: none; }
+    .page {
+      width: 100%;
+      max-width: 440px;
+      margin: auto;
+      min-width: 0;
+    }
 
-  .icon { margin-right: 12px; font-size: 16px; }
+    .card {
+      width: 100%;
+      padding: 28px 20px 22px;
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 18px 55px rgba(0, 0, 0, .25);
+      overflow-wrap: anywhere;
+    }
 
-  .join-text {
-    color: #eee;
-    font-size: 12px;
-    margin: 20px 0 12px;
-    font-weight: 300;
-  }
+    .logo {
+      display: block;
+      width: 88px;
+      height: 88px;
+      max-width: 100%;
+      margin: 0 auto 16px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--green);
+      background: #17232c;
+    }
 
-  .telegram-btn {
-    display: block;
-    background: linear-gradient(90deg, #00d2ff 0%, #9247ff 100%);
-    color: white;
-    text-decoration: none;
-    padding: 14px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 16px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.3);
-  }
+    .eyebrow {
+      display: inline-block;
+      max-width: 100%;
+      padding: 5px 10px;
+      border: 1px solid #285443;
+      border-radius: 30px;
+      color: var(--green);
+      background: var(--green-dark);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
 
-  .hindi-quote {
-    color: #bbb;
-    font-size: 13px;
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
+    h1 {
+      margin: 16px 0 10px;
+      font-size: clamp(21px, 6vw, 29px);
+      line-height: 1.3;
+      letter-spacing: -.4px;
+      overflow-wrap: anywhere;
+    }
 
-  .footer-box {
-    border: 1px solid rgba(0, 210, 255, 0.2);
-    border-radius: 12px;
-    padding: 8px;
-    font-size: 11px;
-    color: #888;
-  }
+    .intro {
+      margin: 0 auto;
+      max-width: 340px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
 
-  /* Link styling for Agency */
-  .footer-box a { 
-    color: #00d2ff; 
-    font-weight: bold; 
-    text-decoration: none;
-  }
+    .join {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 52px;
+      margin-top: 22px;
+      padding: 13px 18px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--green);
+      color: #07150f;
+      text-decoration: none;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 800;
+      -webkit-tap-highlight-color: transparent;
+      transition: background .2s ease;
+    }
 
-  .disclaimer {
-    font-size: 9px;
-    color: #444;
-    margin-top: 12px;
-  }
-</style>
+    .join:hover { background: #65e6b7; }
+    .join:active { transform: scale(.99); }
+
+    .join:focus-visible,
+    .agency-promo a:focus-visible {
+      outline: 3px solid white;
+      outline-offset: 4px;
+    }
+
+    .note {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+      margin: 23px 0;
+      text-align: left;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      min-width: 0;
+      padding: 12px;
+      background: #0b131b;
+      border: 1px solid #1d2a35;
+      border-radius: 12px;
+      font-size: 13px;
+    }
+
+    .check {
+      flex: 0 0 22px;
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      color: var(--green);
+      background: #17362c;
+      font-weight: bold;
+    }
+
+    .feature-copy { min-width: 0; }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .feature-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .disclaimer {
+      padding-top: 17px;
+      border-top: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .disclaimer h2 {
+      margin: 0 0 7px;
+      color: #e5ebef;
+      font-size: 12px;
+    }
+
+    .disclaimer p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding-top: 16px;
+      text-align: center;
+    }
+
+    .agency-promo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 13px 10px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .agency-promo a {
+      display: inline-block;
+      padding: 5px 8px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .agency-promo a:hover { text-decoration: underline; }
+
+    .copyright {
+      padding: 11px 5px 0;
+      color: #84929c;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 360px) {
+      body {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .card {
+        padding: 23px 14px 19px;
+        border-radius: 17px;
+      }
+
+      .logo {
+        width: 78px;
+        height: 78px;
+      }
+
+      .intro { font-size: 13px; }
+      .feature { padding: 10px; }
+    }
+
+    @media (min-width: 600px) {
+      body {
+        padding-top: 32px;
+        padding-bottom: 32px;
+      }
+
+      .card { padding: 32px 25px 25px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
 </head>
+
 <body>
+  <main class="page">
+    <section class="card" aria-labelledby="page-title">
 
-<div class="card">
-  <img src="https://i.ibb.co/GQYGXHF4/In-Shot-20260927-223648191.jpg" alt=" GUJRATI TRADER" class="profile-img">
+      <img
+        class="logo"
+        src="https://iili.io/nVmoAjn.jpg"
+        alt="GAUTAM KUMAR logo"
+        width="88"
+        height="88"
+        fetchpriority="high"
+        decoding="async"
+      >
 
-  <h1> GUJRATI TRADER</h1>
+      <span class="eyebrow">Stock Market Education</span>
 
-  <div class="features">
-    <div class="feature-item"><span class="icon"></span> Learning & Educational Sessions</div>
-    <div class="feature-item"><span class="icon"></span> Market Concepts & Awareness</div>
-    <div class="feature-item"><span class="icon"></span> Chart Reading Concepts</div>
-    <div class="feature-item"><span class="icon"></span> Educational Case Discussions</div>
-  </div>
+      <h1 id="page-title">GAUTAM KUMAR</h1>
 
-  <p class="join-text">Join our learning community and grow your knowledge</p>
+      <p class="intro">
+        Explore stock market concepts, understand market terminology,
+        and learn through educational content in our Telegram community.
+      </p>
 
-  <a href="https://t.me/+mc6hSYTJFoU0MmRl" class="telegram-btn">JOIN TELEGRAM</a>
+      <a
+        class="join"
+        href="https://t.me/+FF9mGZQpoxgzMDI9"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Join GAUTAM KUMAR Telegram channel"
+      >Join Telegram</a>
 
-  <p class="hindi-quote">     ,     </p>
+      <p class="note">
+        Explore educational content and community discussions.
+      </p>
 
-  <div class="footer-box">
-    This Channel Advertise By <a href="https://t.me/+3XoqJNLxYHswNTc1" target="_blank">AD BUILD AGENCY</a>
-  </div>
+      <div class="features">
 
-  <div class="disclaimer">
-    Terms | Privacy | Disclaimer <br>
-    This site is not part of Facebook� or endorsed by Facebook�.
-  </div>
-</div>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2552096918611818');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2552096918611818&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+        <div class="feature">
+          <span class="check" aria-hidden="true">✓</span>
+          <div class="feature-copy">
+            <strong>Market Education</strong>
+            <p>Learn the basics and understand market concepts.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <span class="check" aria-hidden="true">✓</span>
+          <div class="feature-copy">
+            <strong>Educational Insights</strong>
+            <p>Explore general market information and learning resources.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <span class="check" aria-hidden="true">✓</span>
+          <div class="feature-copy">
+            <strong>Learning Community</strong>
+            <p>Discover educational content and community discussions.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="disclaimer">
+        <h2>Risk Disclaimer</h2>
+        <p>
+          This community is intended for educational and informational
+          purposes only. Stock market investments are subject to market
+          risks, including possible loss of capital. Educational content
+          does not guarantee returns or replace independent research or
+          advice from a qualified financial professional. Please assess
+          your risk tolerance before making investment decisions.
+        </p>
+      </div>
+
+    </section>
+
+    <footer>
+      <div class="agency-promo">
+        <span>Promoted By</span>
+        <a
+          href="https://t.me/+3XoqJNLxYHswNTc1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >AD BUILD AGENCY ↗</a>
+      </div>
+
+      <div class="copyright">
+        © 2026 GAUTAM KUMAR · Stock Market Education
+      </div>
+    </footer>
+  </main>
 </body>
 </html>
